@@ -47,6 +47,7 @@ runcmd:
   - 'chmod o-rwx /usr/bin/su'
   - 'sed -i "s/^PASS_MAX_DAYS.*$/PASS_MAX_DAYS   90/" /etc/login.defs'
   - 'sed -i "s/^PASS_MIN_LEN.*$/PASS_MIN_LEN    9/" /etc/login.defs'
+  - 'sed -i "/\#PermitRootLogin yes/ aPermitRootLogin without-password" /etc/ssh/sshd_config'
   - 'touch /etc/cloud/cloud-init.disabled'
   - 'systemctl disable cloud-config.service'
   - 'systemctl disable cloud-final.service'
