@@ -112,7 +112,6 @@
                  --network network={{ network_name }},model=virtio
                  --network network={{ network_name }},model=virtio
                  --network network={{ network_name }},model=virtio
-                 --network network={{ network_name }},model=virtio
                  --network bridge=br0,model=virtio
                  --graphics vnc
                  --{{virt_hypervisor}}
