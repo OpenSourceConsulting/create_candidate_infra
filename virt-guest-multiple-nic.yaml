@@ -64,8 +64,11 @@
   tasks:
 
       - name: get list of vms
-        virt: command=list_vms
+        local_action:
+          module: virt
+          command: list_vms
         register: virt_vms
+        run_once: true
 
       - name: create user-date directory 
         file: 
@@ -121,8 +124,11 @@
         with_items: guests
 
       - name: get guest info
-        virt: command=info
+        local_action:
+          module: virt
+          command: info
         register: virt_info
+        run_once: true
 
       - name: make sure all vms are running
         virt: name={{ inventory_hostname }} command=start
